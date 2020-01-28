@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <template id="lists">
+        <ul>
+          <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ingredient}} ({{i}})</li>
+        </ul>
+        <button @click="ingredients.push('spices')"
+        type="button" name="buttonPush">Push</button>
+        <button @click="ingredients.pop()" type="button" name="buttonSlice">Pop</button>
+        <button @click="ingredients.shift()" type="button" name="buttonSlice">Shift</button>
+        <hr>
+        <template v-for="(ingredient, key) in ingredients" id="">
+          <h1>{{ingredient}}</h1>
+          <p>{{key}}</p>
+        </template>
+        <hr>
+        <ul>
+          <li v-for="(person, key) in persons">{{key}} | {{person.name}} | {{person.age}} | {{person.color}}</li>
+        </ul>
+        <hr>
+        <ul>
+          <li v-for="person in persons">
+            <div v-for="(value, key, index) in person">{{key}}: {{value}} ({{index}})</div>
+          </li>
+        </ul>
+        <hr>
+        <span v-for="n in 10">{{n}}</span>
+        <hr>
+      </template>
+      <hr>
+      <template id="lesson_on_vue_conditions">
+        <p v-if='show && showAlso'>You can see me! <span>Both true</span> </p>
+        <p v-else-if='(show && !showAlso)||(!show && showAlso)'>Now you see me! <span>One true, one false</span></p>
+        <p v-else>Do you also see me? <span>Both false</span></p>
+        <template v-if='show' id="">
+          <h1>Heading</h1>
+          <p>Inside a template</p>
+        </template>
+        <!-- v-show keeps the element hidden, less efficient -->
+        <p v-show='show'>This is a v-show example</p>
+        <button @click="changeShows" type="button" name="button">Switch</button>
+        <button @click="changeShowAlso" type="button" name="button">ShowAlso</button>
+        <p>{{show}} | {{showAlso}}</p>
+      </template>
+    </div>
+  </body>
+</html>
+<script src="app.js"></script>

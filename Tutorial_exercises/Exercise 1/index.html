@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../vue.js"> </script>
+  </head>
+  <body>
+    <div id="exercise">
+       <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
+        <p>VueJS is pretty cool - {{name}} {{age}}</p>
+        <!-- 2) Output your age, multiplied by 3 -->
+        <p>{{times3()}}</p>
+        <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
+        <p>{{randomCall()}}</p>
+        <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+        <div>
+            <img style="width:100px;height:100px" :src="link">
+        </div>
+        <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
+        <div>
+            <input type="text" :value="name">
+        </div>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  new Vue({
+    el: '#exercise',
+    data: {
+        name: 'Adrian',
+        age: '40',
+        link: 'https://cdn11.bigcommerce.com/s-la1x8o7zmn/images/stencil/800x800/products/622/489/RedApple__23344.1570489422.jpg?c=2'
+    },
+    methods: {
+      times3() {
+        return this.age*3
+      },
+      randomCall() {
+        return Math.random()
+      }
+    }
+  })
+</script>

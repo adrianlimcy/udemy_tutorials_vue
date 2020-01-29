@@ -44,6 +44,7 @@ new Vue({
     newGame() {
       this.ownHealthBarWidth = 100
       this.monsterHealtBarWidth = 100
+      this.history = []
     },
     attack() {
       let damageToMonster = this.attackCal(0)

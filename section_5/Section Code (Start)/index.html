@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src=../../vue.js></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{title}}</h1>
+      <button @click="title = 'Changed'" type="button" name="button">Update Title</button>
+      <button @click="destroy" type="button" name="button">Destroy</button>
+    </div>
+    <div id="app1">
+      <h1 ref="heading">{{ title }}</h1>
+      <button v-on:click="show" ref="myButton">Show Paragraph</button>
+      <p v-if="showParagraph">This is not always visible</p>
+    </div>
+    <div id="app2">
+      <h1 ref="heading">{{ title }}</h1>
+      <button @click="onChange" type="button" name="button">Change something in Vue 1</button>
+      <!-- <hello></hello>
+      <hello></hello> -->
+    </div>
+    <div id="app3">
+    </div>
+    <!-- <div >
+      <hello></hello>
+      <hello></hello>
+    </div> -->
+    <!-- <div class="hello"></div>
+    <div class="hello"></div> -->
+  </body>
+</html>
+
+<script src="app.js"></script>

@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import CustomHeader from './CustomHeader.vue'
-import CustomFooter from './CustomFooter.vue'
-import ServerList from './ServerFarm.vue'
+import CustomHeader from './components/shared/CustomHeader.vue'
+import CustomFooter from './components/shared/CustomFooter.vue'
+import ServerList from './components/server/ServerFarm.vue'
 
 export default {
   components: {
     customHeader: CustomHeader,
-    customFooter: CustomFooter,
+    CustomFooter, //ES6 style of writing
     'server-list': ServerList
   }
 

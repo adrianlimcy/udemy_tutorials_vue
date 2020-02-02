@@ -3,8 +3,8 @@ import App from './App.vue'
 
 export const eventBus = new Vue({
   methods: {
-    showTheDetails(status) {
-      this.$emit('showTheDetails', status)
+    showTheDetails(data) {
+      this.$emit('showTheDetails', data)
     }
   }
 })
